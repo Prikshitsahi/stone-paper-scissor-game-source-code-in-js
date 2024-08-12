@@ -1,0 +1,37 @@
+const promp=require("prompt-sync")()
+let i;
+do {
+    let a={
+        0:"scissors",
+        1:"paper",
+        2:"stone"
+    }
+    console.table(a)
+    let me=promp("enter 0 for scissor 1 for paper 2 for stone :")
+    
+    let b={
+        0:"scissors",
+        1:"paper",
+        2:"stone"
+    }
+    
+    let comp=Math.random()*3
+    comp=Math.floor(comp)
+    console.log("computer choosed ".concat(b[comp]))
+    console.log("you choosed ".concat(a[me]))
+    if(comp!=me){
+        if(comp-me===-2 || comp-me===1){
+            console.log("you win")
+        }
+        else{
+            console.log("you lost")
+        }
+    }
+    else{
+        console.log("Tie")
+    }
+
+    i=promp("want to play again press (1) : ")
+} while (i==1);
+
+
